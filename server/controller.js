@@ -1,5 +1,6 @@
-module.exports = {
+const DateChinese = require('date-chinese')
 
+module.exports = {
     getCompliment: (req, res) => {
         const compliments = ["A beautiful, smart, and loving person will be coming into your life.", 
         "A dubious friend may be an enemy in camouflage.",
@@ -29,14 +30,14 @@ module.exports = {
 
     getChineseDay: (req, res) => {
         const { day, month, year } = req.query
-        console.log(day)
-        console.log(month)
-        console.log(year)
+
+        let cal = new DateChinese.CalendarChinese()
+        cal.fromGregorian(+year, +month,  +day)
+
         res.json({
-            "day" : day,
-            "month" : month,
-            "year" : year
+            "day" : cal.day ,
+            "month" : cal.month,
+            "year" : cal.year
         })
     }
-
 }
