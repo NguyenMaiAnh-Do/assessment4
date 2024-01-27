@@ -6,6 +6,21 @@
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
     <button id="getFortune">Get Fortune</button>
+
+    <form method="get">
+      <label for="day">Day:</label>
+      <input type="number" id="day" name="day" min="1" max="31">
+
+      <label for="month">Month:</label>
+      <input type="number" id="month" name="month" min="1" max="12">
+
+      <label for="year">Year:</label>
+      <input type="number" id="year" name="year" min="1900" max="2100">
+
+      <input type="submit" value="Submit">
+  </form>
+  <div id="result">result</div>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     

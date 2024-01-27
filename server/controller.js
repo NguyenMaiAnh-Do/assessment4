@@ -25,6 +25,18 @@ module.exports = {
         let fortuneIdx = Math.floor(Math.random() * fortunes.length)
         let randomFortune = fortunes[fortuneIdx]
         res.status(200).send(randomFortune)
+    },
+
+    getChineseDay: (req, res) => {
+        const { day, month, year } = req.query
+        console.log(day)
+        console.log(month)
+        console.log(year)
+        res.json({
+            "day" : day,
+            "month" : month,
+            "year" : year
+        })
     }
 
 }
